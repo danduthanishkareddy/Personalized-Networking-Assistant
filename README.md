@@ -1,32 +1,41 @@
-🤝 Personalized Networking Assistant
+# 🤝 Personalized Networking Assistant
 
-The Personalized Networking Assistant is an AI-powered application developed as part of the Google Cloud GenAI Project. It helps users generate personalized conversation starters for networking events using event details, user interests, topic classification, and fact verification.
+The **Personalized Networking Assistant** is an AI-powered application developed as part of the **Google Cloud GenAI Project**. It helps users generate personalized conversation starters for networking events by leveraging Generative AI, topic classification, and fact verification. The application enables users to build meaningful professional connections with confidence.
 
-🚀 Features
+---
 
-💬 AI-generated conversation starters  
-🧠 Event topic analysis  
-📌 Personalized networking suggestions  
-🔍 Fact checking using Wikipedia  
-🕘 Conversation history tracking  
-👍 Feedback collection  
-🌐 Interactive Streamlit web interface  
-⚡ FastAPI backend  
+# 🚀 Features
 
-🛠️ Technologies Used
+- 💬 AI-generated conversation starters
+- 🧠 Topic classification using DistilBERT
+- 🤖 Conversation generation using GPT-2 Small
+- 🔍 Fact verification using Wikipedia API
+- 📋 User profile and event management
+- 🕒 Conversation history tracking
+- ⭐ Feedback collection
+- 🌐 Interactive Streamlit web interface
+- ⚡ FastAPI backend services
 
-Python  
-Streamlit  
-FastAPI  
-GPT-2 Small  
-DistilBERT  
-Wikipedia API  
-PyTest  
-Requests  
+---
 
-📂 Repository Structure
+# 🛠️ Technologies Used
 
-Voice-Based-Concept-Understanding-Analyser
+- Python
+- Streamlit
+- FastAPI
+- GPT-2 Small
+- DistilBERT
+- Wikipedia API
+- Transformers
+- Requests
+- PyTest
+
+---
+
+# 📂 Repository Structure
+
+```
+Personalized-Networking-Assistant
 │
 ├── 1. Brainstorming & Ideation
 ├── 2. Requirement Analysis
@@ -37,43 +46,64 @@ Voice-Based-Concept-Understanding-Analyser
 ├── 7. Project Documentation
 ├── 8. Project Demonstration
 └── Source Code
+```
 
-▶️ How to Run
+---
 
-1. Clone the repository
+# ▶️ How to Run
 
+### 1. Clone the repository
+
+```bash
 git clone <repository-url>
+```
 
-2. Navigate to the project folder
+### 2. Navigate to the Source Code folder
 
-cd Personalized-Networking-Assistant
+```bash
+cd Source\ Code
+```
 
-3. Install the required packages
+### 3. Install the required packages
 
+```bash
 pip install -r requirements.txt
+```
 
-4. Run the FastAPI backend
+### 4. Run the FastAPI backend
 
-python -m uvicorn backend.main:app --reload
+```bash
+uvicorn backend.main:app --reload
+```
 
-5. Run the Streamlit frontend
+### 5. Run the Streamlit application
 
-streamlit run frontend/app.py
+```bash
+streamlit run app.py
+```
 
-6. Open the application
+### 6. Open the application
 
 Visit:
 
+```
 http://localhost:8501
+```
 
-FastAPI Swagger UI:
+FastAPI API Documentation:
 
+```
 http://127.0.0.1:8000/docs
+```
 
-📈 Project Outcome
+---
 
-This application helps students, job seekers, and professionals improve networking confidence by generating relevant conversation starters, verifying facts, and saving conversation history for future reference.
+# 📈 Project Outcome
 
-👩‍💻 Author
+The Personalized Networking Assistant helps students, professionals, and job seekers prepare for networking events by generating AI-powered conversation starters, classifying discussion topics, verifying facts using Wikipedia, and maintaining conversation history. The application enhances networking confidence and communication through an intelligent and user-friendly platform.
 
-Dandu Thanishka Reddy
+---
+
+# 👩‍💻 Author
+
+**Dandu Thanishka Reddy**
