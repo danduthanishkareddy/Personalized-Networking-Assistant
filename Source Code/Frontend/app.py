@@ -1,130 +1,222 @@
 import streamlit as st
 import requests
 
-API_URL = "http://127.0.0.1:8000"
+# -----------------------------
+# Backend URL
+# -----------------------------
+BASE_URL = "http://127.0.0.1:8000"
 
-st.set_page_config(page_title="Personalized Networking Assistant", layout="centered")
+# -----------------------------
+# Page Configuration
+# -----------------------------
+st.set_page_config(
+    page_title="Personalized Networking Assistant",
+    page_icon="🤖",
+    layout="wide"
+)
 
 st.title("Personalized Networking Assistant")
-st.write("Generate smart conversation starters for networking events.")
+st.write("Generate personalized networking suggestions for professional events.")
 
-if "generated_data" not in st.session_state:
-    st.session_state.generated_data = None
+# -----------------------------
+# Session State
+# -----------------------------
+if "result" not in st.session_state:
+    st.session_state.result = None
 
-event_description = st.text_area("Enter Event Description")
-interests_text = st.text_input("Enter your interests separated by commas")
+if "history" not in st.session_state:
+    st.session_state.history = []
 
-if st.button("Generate Conversation Starters"):
-    interests = [i.strip() for i in interests_text.split(",") if i.strip()]
+if "feedback_history" not in st.session_state:
+    st.session_state.feedback_history = []
 
-    payload = {
-        "event_description": event_description,
-        "interests": interests
-    }
+# -----------------------------
+# User Information
+# -----------------------------
+st.header("👤 User Information")
 
-    response = requests.post(f"{API_URL}/generate-conversation", json=payload)
+name = st.text_input("Name")
+profession = st.text_input("Profession")
+interests_input = st.text_input(
+    "Interests (comma separated)",
+    placeholder="AI, Machine Learning, Python"
+)
 
-    if response.status_code == 200:
-        st.session_state.generated_data = response.json()
+# -----------------------------
+# Event Information
+# -----------------------------
+st.header("📅 Event Information")
+
+event_title = st.text_input("Event Title")
+domain = st.text_input("Domain")
+location = st.text_input("Location")
+
+# -----------------------------
+# Generate Button
+# -----------------------------
+generate = st.button("Generate Conversation")
+
+# -----------------------------
+# Generate Conversation
+# -----------------------------
+if generate:
+
+    if not all([name, profession, event_title, domain]):
+        st.warning("Please fill in all required fields.")
+
     else:
-        st.error("Something went wrong.")
 
-if st.session_state.generated_data:
-    data = st.session_state.generated_data
+        interests = [
+            i.strip()
+            for i in interests_input.split(",")
+            if i.strip()
+        ]
 
-    st.subheader("Extracted Themes")
-    st.write(data["extracted_themes"])
+        data = {
+            "user": {
+                "name": name,
+                "profession": profession,
+                "interests": interests
+            },
+            "event": {
+                "title": event_title,
+                "domain": domain,
+                "location": location
+            }
+        }
 
-    st.subheader("Conversation Starters")
+        with st.spinner("Generating conversation suggestions..."):
 
-    for starter in data["conversation_starters"]:
+            try:
+
+                response = requests.post(
+                    f"{BASE_URL}/generate-conversation",
+                    json=data
+                )
+
+                if response.status_code == 200:
+
+                    st.session_state.result = response.json()
+
+                    st.success("Conversation generated successfully!")
+
+                else:
+
+                    st.error("Backend returned an error.")
+
+            except Exception as e:
+
+                st.error(f"Error: {e}")
+
+# -----------------------------
+# Display Results
+# -----------------------------
+if st.session_state.result:
+
+    result = st.session_state.result
+
+    st.header("🎯 Suggested Topics")
+
+    for topic in result["suggested_topics"]:
+        st.write(f"**Topic:** {topic['topic']}")
+        st.write(f"Status: {topic['status']}")
+        st.write(f"Summary: {topic['summary']}")
+        st.divider()
+
+    st.header("🤝 Networking Tips")
+
+    for tip in result["networking_tips"]:
+        st.write(f"• {tip}")
+
+    st.header("👋 Self Introduction")
+
+    st.write(result["self_introduction"])
+
+    st.header("💬 Conversation Starters")
+
+    for starter in result["conversation_starters"]:
         st.write(f"• {starter}")
 
-        col1, col2 = st.columns(2)
+    st.header("📜 Conversation History")
 
-        with col1:
-            if st.button("👍 Helpful", key=f"helpful_{starter}"):
-                requests.post(
-                    f"{API_URL}/feedback",
-                    json={
-                        "conversation_starter": starter,
-                        "feedback": "Helpful"
-                    }
-                )
-                st.success("Feedback saved!")
+    if result["history"]:
 
-        with col2:
-            if st.button("👎 Not Helpful", key=f"not_helpful_{starter}"):
-                requests.post(
-                    f"{API_URL}/feedback",
-                    json={
-                        "conversation_starter": starter,
-                        "feedback": "Not Helpful"
-                    }
-                )
-                st.success("Feedback saved!")
+        history = result["history"][-5:]
 
-st.divider()
+        for item in reversed(history):
 
-st.subheader("Quick Fact Check")
+            st.subheader(f"👤 {item[0]}")
+            st.write(f"**📅 Event:** {item[1]}")
 
-topic = st.text_input("Enter a topic to fact-check")
+            st.write("**🎯 Topics:**")
+            for topic in item[2].split(","):
+                st.write(f"- {topic.strip()}")
 
-if st.button("Fact Check"):
+            st.caption(f"🕒 {item[3]}")
+            st.divider()
+
+    else:
+        st.info("No conversation history available.")
+
+    st.header("✅ Fact Check Status")
+
+    st.success(result["fact_check_status"])
+
+# -----------------------------
+# Feedback
+# -----------------------------
+st.header("👍 Feedback")
+
+col1, col2 = st.columns(2)
+
+if col1.button("👍 Good"):
+
     response = requests.post(
-        f"{API_URL}/fact-check",
-        json={"topic": topic}
+        f"{BASE_URL}/feedback",
+        json={
+            "user_name": name,
+            "feedback": "Good"
+        }
     )
 
     if response.status_code == 200:
-        data = response.json()
-        st.subheader("Summary")
-        st.write(data["summary"])
-    else:
-        st.error("Fact check failed.")
+        st.success("Thank you for your feedback!")
 
-st.divider()
+if col2.button("👎 Bad"):
 
-st.subheader("Conversation History")
-
-if st.button("Load History"):
-    response = requests.get(f"{API_URL}/history")
-
-    if response.status_code == 200:
-        history = response.json()["history"]
-
-        if history:
-            for item in reversed(history):
-                st.markdown(f"**Event:** {item['event_description']}")
-                st.write("Themes:", item["themes"])
-                st.write("Interests:", ", ".join(item["interests"]))
-
-                st.write("Conversation Starters:")
-                for starter in item["conversation_starters"]:
-                    st.write(f"- {starter}")
-
-                st.divider()
-        else:
-            st.info("No conversation history found.")
-    else:
-        st.error("Unable to load history.")
-
-st.divider()
-
-st.subheader("Feedback History")
-
-if st.button("Load Feedback History"):
-    response = requests.get(f"{API_URL}/feedback-history")
+    response = requests.post(
+        f"{BASE_URL}/feedback",
+        json={
+            "user_name": name,
+            "feedback": "Bad"
+        }
+    )
 
     if response.status_code == 200:
-        feedback_history = response.json()["feedback_history"]
+        st.success("Thank you for your feedback!")
 
-        if feedback_history:
-            for item in reversed(feedback_history):
-                st.write("Conversation Starter:", item["conversation_starter"])
-                st.write("Feedback:", item["feedback"])
-                st.divider()
+# -----------------------------
+# Feedback History
+# -----------------------------
+st.header("📝 Feedback History")
+
+try:
+    response = requests.get(f"{BASE_URL}/feedback-history")
+
+    if response.status_code == 200:
+
+        feedbacks = response.json()
+
+        if feedbacks:
+
+            for item in reversed(feedbacks[-10:]):
+
+                icon = "👍" if item["feedback"] == "Good" else "👎"
+
+                st.write(f"{icon} {item['user']} - {item['feedback']}")
+
         else:
-            st.info("No feedback history found.")
-    else:
-        st.error("Unable to load feedback history.")
+            st.info("No feedback history available.")
+
+except Exception as e:
+    st.error(f"Unable to load feedback history: {e}")
