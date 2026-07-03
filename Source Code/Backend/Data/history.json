@@ -176,5 +176,65 @@
             "I noticed you're interested in Cloud Computing. What projects have you been working on?",
             "I've also been exploring Python. What's your experience with it?"
         ]
+    },
+    {
+        "event_description": "i want a clear netwroking manner for seminar in a collage on the topic \"Artificial intelligence\"\n",
+        "themes": [
+            "General Networking"
+        ],
+        "interests": [
+            "python",
+            "java"
+        ],
+        "conversation_starters": [
+            "I noticed you're interested in General Networking. What projects have you been working on?",
+            "I've also been exploring python. What's your experience with it?",
+            "I've also been exploring java. What's your experience with it?"
+        ]
+    },
+    {
+        "event_description": "i want a clear netwroking manner for seminar in a collage on the topic \"Artificial intelligence\"\n",
+        "themes": [
+            "General Networking"
+        ],
+        "interests": [
+            "python",
+            "java"
+        ],
+        "conversation_starters": [
+            "I noticed you're interested in General Networking. What projects have you been working on?",
+            "I've also been exploring python. What's your experience with it?",
+            "I've also been exploring java. What's your experience with it?"
+        ]
+    },
+    {
+        "event_description": "i want a clear netwroking manner for seminar in a collage on the topic \"Artificial intelligence\"\n",
+        "themes": [
+            "General Networking"
+        ],
+        "interests": [
+            "python",
+            "java"
+        ],
+        "conversation_starters": [
+            "I noticed you're interested in General Networking. What projects have you been working on?",
+            "I've also been exploring python. What's your experience with it?",
+            "I've also been exploring java. What's your experience with it?"
+        ]
+    },
+    {
+        "event_description": "\ni want to generate about the data structures for give a seminar",
+        "themes": [
+            "Data Science"
+        ],
+        "interests": [
+            "python",
+            "java"
+        ],
+        "conversation_starters": [
+            "I noticed you're interested in Data Science. What projects have you been working on?",
+            "I've also been exploring python. What's your experience with it?",
+            "I've also been exploring java. What's your experience with it?"
+        ]
     }
 ]

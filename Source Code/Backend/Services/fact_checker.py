@@ -15,3 +15,4 @@ def fact_check(topic):
             "topic": topic,
             "summary": "No information found."
         }
+    POST /fact-check
