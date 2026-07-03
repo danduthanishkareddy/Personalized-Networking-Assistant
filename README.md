@@ -1,31 +1,33 @@
 # 🤝 Personalized Networking Assistant
 
-> **An AI-powered networking companion that helps users build meaningful professional connections through personalized conversation starters, self-introductions, networking tips, and intelligent fact verification.**
-
-![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4B4B?logo=streamlit)
-![Groq](https://img.shields.io/badge/Groq-LLM-orange)
-![License](https://img.shields.io/badge/License-Educational-success)
+### 🚀 AI-Powered Networking Companion for Smarter Professional Conversations
 
 ---
 
 ## 📖 Overview
 
-The **Personalized Networking Assistant** is an AI-powered web application developed as part of the **Google Cloud GenAI Project**. It assists students, professionals, and job seekers in preparing for networking events by generating personalized conversation starters, self-introductions, networking tips, and fact-verified responses using **Groq LLMs**.
+The **Personalized Networking Assistant** is an AI-powered web application developed as part of the **Google Cloud GenAI Project**. It helps students, professionals, and job seekers prepare for networking events by generating personalized conversation starters, professional self-introductions, networking tips, and fact-verified responses using **Groq LLMs**.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python">
+  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi">
+  <img src="https://img.shields.io/badge/Streamlit-Frontend-FF4B4B?logo=streamlit">
+  <img src="https://img.shields.io/badge/Groq-AI-orange">
+  <img src="https://img.shields.io/badge/Status-Completed-success">
+</p>
 
 ---
 
 ## ✨ Features
 
-- 💬 AI-generated conversation starters
+- 💬 AI-powered conversation starter generation
 - 🎤 Personalized self-introduction generator
 - 💡 Smart networking tips
-- 📅 Event-based conversation suggestions
+- 📅 Event-specific conversation suggestions
 - 🧠 Topic and event analysis
 - 🔍 Fact verification using Wikipedia API
-- 📚 Conversation history tracking
-- ⭐ User feedback system
+- 📚 Conversation history management
+- ⭐ User feedback collection
 - 🌐 Interactive Streamlit interface
 - ⚡ FastAPI REST API backend
 
@@ -35,10 +37,10 @@ The **Personalized Networking Assistant** is an AI-powered web application devel
 
 | Category | Technologies |
 |----------|--------------|
-| 🐍 Language | Python |
+| 🐍 Programming | Python |
 | ⚡ Backend | FastAPI, Uvicorn, Pydantic |
 | 🎨 Frontend | Streamlit |
-| 🤖 AI | Groq API (LLM) |
+| 🤖 AI | Groq API |
 | 🌐 APIs | Wikipedia API |
 | 📦 Libraries | Requests, HTTPX, BeautifulSoup4, python-dotenv |
 | 🧪 Testing | PyTest |
@@ -46,87 +48,86 @@ The **Personalized Networking Assistant** is an AI-powered web application devel
 
 ---
 
-## 📂 Repository Structure
+## 📂 Project Structure
 
 ```text
-Personalized-Networking-Assistant
+Source Code
 │
-├── 1. Brainstorming & Ideation
-├── 2. Requirement Analysis
-├── 3. Project Design Phase
-├── 4. Project Planning Phase
-├── 5. Project Development Phase
-├── 6. Project Testing
-├── 7. Project Documentation
-├── 8. Project Demonstration
-└── Source Code
-    ├── app
-    ├── frontend
-    ├── tests
-    ├── requirements.txt
-    ├── networking.db
-    └── .env.example
+├── app
+├── frontend
+├── tests
+├── networking.db
+├── requirements.txt
+└── .env.example
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the Repository
+### Clone Repository
 
 ```bash
 git clone <repository-url>
 ```
 
-### 2️⃣ Navigate to Source Code
+### Navigate to Source Code
 
 ```bash
 cd "Source Code"
 ```
 
-### 3️⃣ Create & Activate Virtual Environment
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-**Windows**
+### Activate Virtual Environment (Windows)
 
 ```bash
 venv\Scripts\activate
 ```
 
-### 4️⃣ Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5️⃣ Run the Backend
+### Run Backend
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-📌 API Docs: **http://127.0.0.1:8000/docs**
+📌 API Documentation
 
-### 6️⃣ Run the Frontend
+```
+http://127.0.0.1:8000/docs
+```
+
+### Run Frontend
 
 ```bash
 streamlit run frontend/app.py
 ```
 
-🌐 Open: **http://localhost:8501**
+🌐 Application URL
+
+```
+http://localhost:8501
+```
 
 ---
 
-## 🎯 Project Highlights
+## 🎯 Highlights
 
-- 🤖 Powered by **Groq Large Language Models**
-- 💬 Personalized AI conversation generation
-- 🔍 Real-time fact verification
+- 🤖 Powered by Groq Large Language Models
 - ⚡ FastAPI backend with Streamlit frontend
-- 📚 Conversation history & feedback management
+- 💬 Personalized AI conversation generation
+- 🔍 Wikipedia-based fact verification
+- 📚 Conversation history management
 - 🧩 Modular and scalable architecture
 
 ---
@@ -134,10 +135,10 @@ streamlit run frontend/app.py
 ## 🔮 Future Enhancements
 
 - 🌍 Multi-language support
-- 🎙️ Voice-based interaction
-- 🤝 LinkedIn integration
+- 🎙️ Voice-enabled conversations
+- 📅 Calendar integration
+- 🤝 LinkedIn profile integration
 - ☁️ Cloud deployment
-- 📊 Analytics dashboard
 
 ---
 
@@ -145,5 +146,4 @@ streamlit run frontend/app.py
 
 **Dandu Thanishka Reddy**
 
-🎓 **Google Cloud GenAI Project**
-
+🎓 Google Cloud GenAI Project
