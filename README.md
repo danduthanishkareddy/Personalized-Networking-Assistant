@@ -24,25 +24,25 @@ The application combines a **FastAPI backend**, **Streamlit frontend**, and modu
 
 # 🛠️ Technologies Used
 
-### Backend
+### ⚙️ Backend
 - Python
 - FastAPI
 - Uvicorn
 - Pydantic
 - python-dotenv
 
-### Frontend
+### 🖥️ Frontend
 - Streamlit
 
-### AI & APIs
+### 🤖 AI & APIs
 - Groq API (LLM Integration)
 - Wikipedia API
 - Requests
 
-### Testing
+### 🧪 Testing
 - PyTest
 
-### Version Control
+### 🌱 Version Control
 - Git
 - GitHub
 
@@ -80,39 +80,39 @@ Personalized-Networking-Assistant
 
 # ⚙️ Installation
 
-## Clone the Repository
+## 📥 Clone the Repository
 
 ```bash
 git clone <repository-url>
 ```
 
-## Navigate to the Source Code
+## 📁 Navigate to the Source Code
 
 ```bash
 cd "Source Code"
 ```
 
-## Create a Virtual Environment
+## 🐍 Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-## Activate the Virtual Environment
+## ▶️ Activate the Virtual Environment
 
-### Windows
+### 🪟 Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-### Linux / macOS
+### 🍎 Linux / macOS
 
 ```bash
 source venv/bin/activate
 ```
 
-## Install Dependencies
+## 📦 Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -126,13 +126,13 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Backend URL
+### 🌐 Backend URL
 
 ```
 http://127.0.0.1:8000
 ```
 
-API Documentation
+### 📚 API Documentation
 
 ```
 http://127.0.0.1:8000/docs
@@ -140,13 +140,13 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# ▶️ Running the Frontend
+# 🖥️ Running the Frontend
 
 ```bash
 streamlit run frontend/app.py
 ```
 
-Open
+### 🌍 Open
 
 ```
 http://localhost:8501
@@ -164,14 +164,14 @@ pytest
 
 # 📈 Project Workflow
 
-1. User enters profile and event information.
-2. Event details are analyzed.
-3. The application generates personalized conversation starters.
-4. Self-introduction suggestions are created.
-5. Networking tips are provided.
-6. Facts are verified using the Wikipedia API.
-7. Conversation history is stored.
-8. User feedback is collected for continuous improvement.
+1. 👤 User enters profile and event information.
+2. 🧠 Event details are analyzed.
+3. 💬 The application generates personalized conversation starters.
+4. 🎤 Self-introduction suggestions are created.
+5. 💡 Networking tips are provided.
+6. 🔍 Facts are verified using the Wikipedia API.
+7. 📖 Conversation history is stored.
+8. ⭐ User feedback is collected for continuous improvement.
 
 ---
 
