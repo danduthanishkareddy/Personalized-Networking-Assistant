@@ -142,7 +142,7 @@ http://localhost:8501
 
 ---
 
-## 👨‍💻 Developed By
+## 👩🏻‍🎓 Developed By
 
 **Dandu Thanishka Reddy**
 
