@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from backend.routes.api_routes import router
+from routers.api_routes import router
 
 app = FastAPI(
     title="Personalized Networking Assistant",
