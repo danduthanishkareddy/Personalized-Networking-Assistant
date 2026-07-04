@@ -1,13 +1,5 @@
 # 🤝 Personalized Networking Assistant
 
-### 🚀 AI-Powered Networking Companion for Smarter Professional Conversations
-
----
-
-## 📖 Overview
-
-The **Personalized Networking Assistant** is an AI-powered web application developed as part of the **Google Cloud GenAI Project**. It helps students, professionals, and job seekers prepare for networking events by generating personalized conversation starters, professional self-introductions, networking tips, and fact-verified responses using **Groq LLMs**.
-
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python">
   <img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi">
@@ -17,6 +9,16 @@ The **Personalized Networking Assistant** is an AI-powered web application devel
 </p>
 
 ---
+
+
+### 🚀 AI-Powered Networking Companion for Smarter Professional Conversations
+
+---
+
+## 📖 Overview
+
+The **Personalized Networking Assistant** is an AI-powered web application developed as part of the **Google Cloud GenAI Project**. It helps students, professionals, and job seekers prepare for networking events by generating personalized conversation starters, professional self-introductions, networking tips, and fact-verified responses using **Groq LLMs**.
+
 
 ## ✨ Features
 
@@ -158,8 +160,15 @@ http://localhost:8501
 
 ---
 
-## 🖥️ Developed By
+## 👥 Project Team
 
-**Dandu Thanishka Reddy**
+| 👤 Team Member | 🎯 Contribution |
+|----------------|-----------------|
+| **Garudappagari Pallavi** | 👑 Team Lead, Project Planning & Coordination |
+| **Dandu Thanishka Reddy** | 🤖 AI Integration, Backend Development & API Services |
+| **Gunturi Teja Sekhar Naidu** | ⚙️ Backend Development, Testing & GitHub Integration |
+| **Chandana Ganuga** | 🎨 Frontend Development, UI Design & Documentation |
 
-🎓 Google Cloud GenAI Project
+🎓 **Google Cloud GenAI Project**
+
+---
