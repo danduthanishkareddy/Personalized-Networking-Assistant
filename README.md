@@ -95,6 +95,22 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+## 🔑 Configure Environment Variables
+
+Before running the application, create a **`.env`** file by copying the **`.env.example`** file.
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Open the newly created **`.env`** file and replace the placeholder with the API key provided by the project owner.
+
+```env
+API_KEY=your_provided_api_key
+```
+
+> ⚠️ **Note:** The application requires a valid API key in the `.env` file to run successfully.
+
 ### Run Backend
 
 ```bash
