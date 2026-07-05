@@ -160,6 +160,13 @@ http://localhost:8501
 
 ---
 
+## 🚀 Demo
+
+
+[Click here to view the live demo](https://drive.google.com/file/d/16GD5vjI_fzPBmCazH4AS7Gds6LaBOmYy/view?usp=sharing)
+
+---
+
 ## 👥 Project Team
 
 | 👤 Team Member | 🎯 Contribution |
@@ -171,14 +178,6 @@ http://localhost:8501
 
 🎓 **Google Cloud GenAI Project**
 
----
 
-## 🚀 Demo
 
-[Click here to view the live demo](## 🚀 Demo
 
-[Click here to view the live demo](https://drive.google.com/file/d/1iD6i3vWVaa5YcC5fvQMufsnuKED9X93T/view?usp=drive_link)
-
----
-
----
